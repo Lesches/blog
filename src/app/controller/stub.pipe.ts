@@ -9,7 +9,7 @@ export class StubPipe implements PipeTransform {
   transform (value: string, len:number): string {
     let words = value.split(' ');
 
-    if (words.length <=len) {
+    if (words.length <= len) {
       return value;
     }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {DummyService} from '../../../model/dummy.service';
 import {Post} from '../../../model/post';
 
@@ -10,7 +10,7 @@ import {Post} from '../../../model/post';
 })
 export class PostComponent implements OnInit {
 post: Post;
-  constructor(private blog: DummyService, private route: ActivatedRoute) {}
+  constructor(private blog: DummyService, private route: ActivatedRoute, private router: Router) {}
 
 
   ngOnInit() {
@@ -21,8 +21,11 @@ post: Post;
   getPost(id): void {
     this.blog.getPostById(id).subscribe(
       res => {
-        this.post = res;
-        console.log(this.post);
+        if (res) {
+          this.post = res;
+        }         else {
+          this.router.navigateByUrl('/error');
+        }
       }
   );
     }
