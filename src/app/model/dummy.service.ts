@@ -52,9 +52,8 @@ export class DummyService {
     return of(this.loggedIn);
   }
 
-  checkLoginValue(): void {
-    this.loggedIn = !this.loggedIn;
+  setLoginVal(newVal: boolean): void {
+    this.loggedIn = newVal;
   }
 
-  setLoginVal():
-}
+ }
