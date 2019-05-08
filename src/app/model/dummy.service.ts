@@ -55,4 +55,6 @@ export class DummyService {
   checkLoginValue(): void {
     this.loggedIn = !this.loggedIn;
   }
+
+  setLoginVal():
 }
