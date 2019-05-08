@@ -8,6 +8,8 @@ import { PostsComponent } from './view/main/posts/posts.component';
 import { PostComponent } from './view/main/post/post.component';
 import { NotFoundComponent } from './view/main/not-found/not-found.component';
 import {StubPipe} from './controller/stub.pipe';
+import {CardModule} from 'primeng/card';
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import {StubPipe} from './controller/stub.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CardModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
